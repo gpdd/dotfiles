@@ -1,6 +1,5 @@
 -general {
 -	colors = true
--	color_good = "#FFFFFF"
 -	interval = 5
 -}
 -
@@ -67,11 +66,7 @@
 -	format = "%degrees°C"
 -	path = "/sys/bus/acpi/devices/LNXTHERM\:00/thermal_zone/temp"
 -}
--
--disk "/" {
--	format = "%avail"
--}
--
+
 -volume master {
 -                   format = "VOL %volume"
 -                   format_muted = "MUT %volume"
@@ -79,4 +74,3 @@
 -                   mixer = "Master"
 -                   mixer_idx = 0
 -}
--
