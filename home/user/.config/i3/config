@@ -1,4 +1,4 @@
-# i3 config file (v4)
+#i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -16,7 +16,11 @@ font pango:monospace 10
 floating_modifier $mod
 
 # Layout mode for new containers
-workspace_layout stacking
+workspace_layout default
+
+# Border style for new windows
+new_window none
+new_float none
 
 # Laptop multimedia hotkeys
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
@@ -146,6 +150,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        mode hide
+        hidden_state hide
+        modifier $mod
 }
 
 set $Locker i3lock && sleep 1
