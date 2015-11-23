@@ -146,12 +146,14 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar & conky
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
 bar {
         status_command $HOME/bin/conky-i3bar
         mode hide
         hidden_state hide
         modifier $mod
+        tray_output none
 }
 
 set $Locker i3lock && sleep 1
