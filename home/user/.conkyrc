@@ -39,6 +39,6 @@ TEXT
   { "full_text" : "${battery_short}" , "color" :
     ${if_match ${battery_percent}>15} "\#ffffff" ${else} "\#ff0000" ${endif} },
   { "full_text" : "vol ${exec pactl list sinks | grep "Volume: f" | cut -d "/" -f2 | cut -d " " -f3}" , "color" : "\#ffffff" },
-  { "full_text" : "${exec skb -p | awk '{print tolower($0)}'}" , "color" : "\#ffffff" },
+  { "full_text" : "${exec skb -p | awk '{print tolower($0)}' | cut -b 1-2}" , "color" : "\#ffffff" },
   { "full_text" : "${time %d-%m-%y %H:%M}" , "color" : "\#ffffff" }
  ],
