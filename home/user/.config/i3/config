@@ -23,8 +23,8 @@ new_window none
 new_float none
 
 # Laptop multimedia hotkeys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10% 
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10% && pactl set-sink-mute 0 false
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10% && pactl set-sink-mute 0 false
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
