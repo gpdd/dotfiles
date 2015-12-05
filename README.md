@@ -1,4 +1,4 @@
-# securely erase the disk
+securely erase the disk
 cryptsetup open --type plain /dev/sda container
 dd if=/dev/zero of=/dev/mapper/container
 
