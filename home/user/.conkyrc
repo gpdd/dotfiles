@@ -5,7 +5,7 @@ background no
 max_text_width 0
 
 # Update interval in seconds
-update_interval 2
+update_interval 1
 
 # This is the number of times Conky will update before quitting.
 # Set to zero to run forever.
@@ -29,7 +29,7 @@ TEXT
 # JSON for i3bar
 
  [
-  { "full_text" : "pacman ${execpi 300 checkupdates | wc -l} cower ${execpi 300 cower -u | wc -l}" , "color" : "\#ffffff" },
+  { "full_text" : "pacman ${execpi 150 checkupdates | wc -l} cower ${execpi 150 cower -u | wc -l}" , "color" : "\#ffffff" },
   { "full_text" : ${if_up enp4s0} "${addr enp4s0}" , "color" : "\#ffffff" ${else} "" ${endif} },
   { "full_text" : ${if_up wlp3s0} "${wireless_essid wlp3s0} ${addr wlp3s0}" , "color" : "\#ffffff" ${else} "" ${endif} },
   { "full_text" : "/ ${fs_free /}" , "color" : "\#ffffff" },
@@ -38,7 +38,7 @@ TEXT
   { "full_text" : "${acpitemp} °C" , "color" : "\#ffffff" },
   { "full_text" : "${battery_short}" , "color" :
     ${if_match ${battery_percent}>15} "\#ffffff" ${else} "\#ff0000" ${endif} },
-  { "full_text" : "vol ${exec pactl list sinks | grep "Volume: f" | cut -d "/" -f2 }" , "color" : "\#ffffff" },
+  { "full_text" : "vol ${exec pactl list sinks | awk '/Volume\: front/{ print $5; }' }" , "color" : "\#ffffff" },
   { "full_text" : "${exec skb -p | awk '{print tolower($0)}' | cut -b 1-2}" , "color" : "\#ffffff" },
   { "full_text" : "${time %d-%m-%y %H:%M}" , "color" : "\#ffffff" }
  ],
