@@ -29,7 +29,7 @@ TEXT
 # JSON for i3bar
 
  [
-  { "full_text" : "pacman ${exec checkupdates | wc -l} cower ${exec cower -u | wc -l}" , "color" : "\#ffffff" },
+  { "full_text" : "pacman ${execpi 300 checkupdates | wc -l} cower ${execpi 300 cower -u | wc -l}" , "color" : "\#ffffff" },
   { "full_text" : ${if_up enp4s0} "${addr enp4s0}" , "color" : "\#ffffff" ${else} "" ${endif} },
   { "full_text" : ${if_up wlp3s0} "${wireless_essid wlp3s0} ${addr wlp3s0}" , "color" : "\#ffffff" ${else} "" ${endif} },
   { "full_text" : "/ ${fs_free /}" , "color" : "\#ffffff" },
